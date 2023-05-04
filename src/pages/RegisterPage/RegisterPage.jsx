@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import SignUp from "components/SignUp/SignUp";
-import "./RegisterPage.css";
-
+import "./RegisterPage.scss";
 
 const RegisterPage = () => {
   return (
-    <div>
-      <h1>Register</h1>
+    <div className="register-page">
+      <h1 className="register-page__title">Register</h1>
       <SignUp />
-      <p>Already have an account? <Link to="/login">Login</Link></p>
+      <p className="register-page__link">
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 };

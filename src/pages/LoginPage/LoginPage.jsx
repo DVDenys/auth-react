@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import Login from "components/Login/Login";
-import "./LoginPage.css";
-
+import "./LoginPage.scss";
 
 const LoginPage = () => {
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="login-page">
+      <h1 className="login-page__title">Login</h1>
       <Login />
-      <p>Or <Link to="/register">Register</Link></p>
+      <p className="login-page__link">
+        Not a member? <Link to="/register">Sign up now</Link>
+      </p>
     </div>
   );
 };

@@ -7,29 +7,28 @@ import "./SignUp.css";
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleRegister = ( email, password ) => {
+  const handleRegister = (email, password) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         console.log(user);
-        dispatch(setUser({
-          email: user.email,
-          id: user.uid,
-          token: user.accessToken,
-        }))
-        navigate('/')
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+          })
+        );
+        navigate("/");
       })
-      .catch(console.error);
+      .catch((error) => {
+        alert(`Error. ${error.code}`)
+      });
   };
 
-  return (
-    <Form 
-      title="register"
-      handleClick={handleRegister}
-    />
-  );
+  return <Form title="register" handleClick={handleRegister} />;
 };
 
 export default SignUp;

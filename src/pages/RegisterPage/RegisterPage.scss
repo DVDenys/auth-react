@@ -1,0 +1,23 @@
+.register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(187, 187, 187, 0.651);
+}
+.register-page__title {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: rgb(33, 0, 36);
+}
+.register-page__link {
+    text-decoration: none;
+    a {
+        color: rgb(73, 73, 73);
+        &:hover {
+            color: black;
+            transition: 200ms;
+        }
+    }
+}

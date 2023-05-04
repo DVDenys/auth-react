@@ -12,24 +12,22 @@ const Login = () => {
   const handleLogin = (email, password) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then(({user}) => {
-        console.log(user);
-        dispatch(setUser({
-          email: user.email,
-          id: user.uid,
-          token: user.accessToken,
-        }))
-        navigate('/')
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken,
+          })
+        );
+        navigate("/");
       })
-      .catch(() => {alert("Invalid user!")});
+      .catch((error) => {
+        alert(`Error. ${error.code}`)
+      });
   };
 
-  return (
-    <Form 
-      title="sing in" 
-      handleClick={handleLogin} 
-    />
-  )
+  return <Form title="login" handleClick={handleLogin} />;
 };
 
 export default Login;

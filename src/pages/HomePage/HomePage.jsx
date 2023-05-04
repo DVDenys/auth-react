@@ -3,16 +3,19 @@ import { useDispatch } from "react-redux";
 import { useAuth } from "hooks/use-auth";
 import { removeUser } from "store/slices/userSlice";
 
-import "./HomePage.css";
+import "./HomePage.scss";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const { isAuth, email } = useAuth()
+  const { isAuth, email } = useAuth();
   return isAuth ? (
-    <div>
-      <h1>Welcome</h1>
+    <div className="home-page">
+      <h1 className="home-page__title">Welcome</h1>
 
-      <button onClick={()=> dispatch(removeUser())}> Log out from {email}</button>
+      <button className="home-page__button" onClick={() => dispatch(removeUser())}>
+        {" "}
+        Log out from {email}
+      </button>
     </div>
   ) : (
     <Navigate to="/login" />
