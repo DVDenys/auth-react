@@ -21,4 +21,4 @@ npm run deploy           # deploy app on Github Pages
 
 ## 📃 About the project
 
-This program is written on `React` using `Redax` and `Firebase` is also used here. The application is intended for user authorization and registration.
+This program is written on `React` using `Redux` and `Firebase` is also used here. The application is intended for user authorization and registration.
